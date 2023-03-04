@@ -43,11 +43,35 @@ input[type="text"] {
     text-align: center;
 }
 
-.btn-container {
+.btn-group {
     display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
 }
 
 .btn {
     margin-right: 10px;
 }
 
+.tooltip {
+    position: absolute;
+    transform: translateX(-50%);
+    display: none;
+    padding: 5px 10px;
+    background-color: #18a53b;
+    color: #fff;
+    border-radius: 5px;
+    font-size: 12px;
+}
+
+.tooltip.show {
+    display: block;
+}
+
+.tooltip-bottom {
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 10px;
+}

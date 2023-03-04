@@ -22,6 +22,32 @@ function generatePassword() {
     document.getElementById("password").value = password;
 }
 
+/**
+ * Copy the password to the clipboard
+ */
+function copyPasswordToClipboard() {
+    let password = document.getElementById("password").value;
+    navigator.clipboard.writeText(password);
+
+    // Display the tooltip "Copied!"
+    displayTooltip('Copied!');
+}
+
+/**
+ * Display the tooltip "Copied!"
+ * @param {string} message - The message to display
+ */
+function displayTooltip(message) {
+    let tooltip = document.getElementById('tooltip');
+    tooltip.innerHTML = message;
+    tooltip.classList.add('show');
+
+    // Hide the tooltip after a few seconds
+    setTimeout(function() {
+        tooltip.classList.remove('show');
+    }, 2000);
+}
+
 // Execute the function when the DOM is fully loaded
 document.addEventListener("DOMContentLoaded", function () {
     const valueRange = document.querySelector("#value")
@@ -36,6 +62,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Call the function generatePassword() when we change the value of the range
     document.getElementById("lenght_password").addEventListener("input", generatePassword);
+
+    // Call the function copyPasswordToClipboard() when we click on the "Copy" button
+    document.getElementById("copy").addEventListener("click", copyPasswordToClipboard);
 
     // Call the function generatePassword() when we load the page
     generatePassword();
