@@ -29,6 +29,9 @@ function copyPasswordToClipboard() {
     let password = document.getElementById("password").value;
     navigator.clipboard.writeText(password);
 
+    // Store the password in the local storage
+    storeInLocalStorage(password);
+
     // Display the tooltip "Copied!"
     displayTooltip('Copied!');
 }
@@ -48,14 +51,37 @@ function displayTooltip(message) {
     }, 2000);
 }
 
+/**
+ * Store the password in the local storage
+ */
+function storeInLocalStorage(password) {
+    // Stockage du mot de passe dans le localStorage
+    localStorage.setItem('copiedPassword', password);
+}
+
 // Execute the function when the DOM is fully loaded
 document.addEventListener("DOMContentLoaded", function () {
+    const passwordInput = document.getElementById('password');
+    const passwordLengthInput = document.getElementById('lenght_password');
+    const passwordValueInput = document.getElementById('value');
+
+    // Get the password from the local storage
+    const storedPassword = localStorage.getItem('copiedPassword');
+
+    // If the password exists in the local storage, we display it
+    if (storedPassword) {
+        passwordInput.value = storedPassword;
+        passwordLengthInput.value = storedPassword.length;
+        passwordValueInput.textContent = storedPassword.length;
+    }
+
+    // Display the value of the range
     const valueRange = document.querySelector("#value")
     const inputRange = document.querySelector("#lenght_password")
     valueRange.textContent = inputRange.value
     inputRange.addEventListener("input", (event) => {
         valueRange.textContent = event.target.value
-    })
+    });
 
     // Call the function generatePassword() when we click on the "Generate" button
     document.getElementById("generate").addEventListener("click", generatePassword);
@@ -67,5 +93,8 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("copy").addEventListener("click", copyPasswordToClipboard);
 
     // Call the function generatePassword() when we load the page
-    generatePassword();
+    // if the password doesn't exist in the local storage
+    if (! storedPassword) {
+        generatePassword();
+    }
 });
