@@ -36,4 +36,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Call the function generatePassword() when we change the value of the range
     document.getElementById("lenght_password").addEventListener("input", generatePassword);
+
+    // Call the function generatePassword() when we load the page
+    generatePassword();
 });
