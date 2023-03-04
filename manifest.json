@@ -3,33 +3,11 @@
     "name": "Chrome Password Generator",
     "version": "1.0",
     "description": "Extension to generate random secure passwords.",
-    "icons": [
-      {
-        "src": "icon16.png",
-        "sizes": "16x16",
-        "type": "image/png"
-      },
-      {
-        "src": "icon32.png",
-        "sizes": "32x32",
-        "type": "image/png"
-      },
-      {
-        "src": "icon48.png",
-        "sizes": "48x48",
-        "type": "image/png"
-      },
-      {
-        "src": "icon128.png",
-        "sizes": "128x128",
-        "type": "image/png"
-      }
-    ],
     "host_permissions": [
       "random"
     ],
     "action": {
-      "default_icon": "icon16.png",
+      "default_icon": "icon48.png",
       "default_popup": "popup.html"
     }
   }
