@@ -42,3 +42,12 @@ input[type="text"] {
     width: 100%;
     text-align: center;
 }
+
+.btn-container {
+    display: flex;
+}
+
+.btn {
+    margin-right: 10px;
+}
+
