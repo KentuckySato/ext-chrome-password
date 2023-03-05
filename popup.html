@@ -28,8 +28,30 @@
           </button>
         </div>
         <div class="options">
-          <label for="length" title="Choose the length of your password">Length: <output id="value"></output></label>
-          <input type="range" id="lenght_password" min="5" max="128" value="12" step="1">
+            <h1>Options</h1>
+            <div class="element">
+                <label for="lenght_password" title="Choose the length of your password">Length: <output id="value"></output></label>
+                <input type="range" id="lenght_password" min="5" max="128" value="12" step="1">
+            </div>
+
+            <div class="element">
+                <label for="uppercase">A-Z</label>
+                <input type="checkbox" id="uppercase" title="Uppercase (A-Z)" checked>
+            </div>
+            <div class="element">
+                <label for="lowercase">a-z</label>
+                <input type="checkbox" id="lowercase" title="Lowercase (a-z)" checked>
+            </div>
+
+            <div class="element">
+                <label for="numbers">0-9</label>
+                <input type="checkbox" id="numbers" title="Numbers (0-9)" checked>
+            </div>
+
+            <div class="element">
+                <label for="specialChars">!@#$%^&*</label>
+                <input type="checkbox" id="specialChars" title="Special characters (!@#$%^&*)">
+            </div>
         </div>
         <div id="tooltip" class="tooltip"></div>
       </div>
