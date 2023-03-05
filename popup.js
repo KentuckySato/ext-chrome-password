@@ -18,6 +18,9 @@ function generatePassword() {
         password += characters.substring(randomNumber, randomNumber + 1);
     }
 
+    // Store the password in the local storage
+    storeInLocalStorage(password);
+
     // Display the password in the text box
     document.getElementById("password").value = password;
 }
@@ -28,9 +31,6 @@ function generatePassword() {
 function copyPasswordToClipboard() {
     let password = document.getElementById("password").value;
     navigator.clipboard.writeText(password);
-
-    // Store the password in the local storage
-    storeInLocalStorage(password);
 
     // Display the tooltip "Copied!"
     displayTooltip('Copied!');
