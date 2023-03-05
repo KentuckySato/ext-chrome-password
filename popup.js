@@ -7,7 +7,12 @@
  */
 function generatePassword() {
     // Possibles characters for the password
-    let characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_+~`|}{[]:;?><,./-=";
+    let lowercaseChars = "abcdefghijklmnopqrstuvwxyz";
+    let uppercaseChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    let numberChars = "0123456789";
+    let symbolChars = "!@#$%^&*()_+-=[]{}|;':\"<>,.?/";
+
+    let characters = lowercaseChars + uppercaseChars + numberChars + symbolChars;
 
     let passwordLength = document.getElementById("lenght_password").value; // Length of the password
     let password = "";
