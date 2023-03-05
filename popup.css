@@ -41,7 +41,7 @@ textarea {
 }
 
 .header svg {
-    fill: #757575;
+    fill: #ffd300;
     margin-right: 10px;
 }
 
@@ -136,4 +136,14 @@ textarea {
     border-bottom-right-radius: 5px;
     font-size: 12px;
     cursor: pointer;
+}
+
+.tooltip {
+    position: relative;
+    display: block;
+    opacity: 0;
+}
+
+.show {
+    opacity: 1;
 }
